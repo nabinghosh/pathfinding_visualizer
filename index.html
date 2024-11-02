@@ -1,34 +1,71 @@
-pathfinding-visualizer/
-├── index.html
-├── assets/
-│   ├── icons/
-│   └── styles/
-│       ├── main.css
-│       ├── grid.css
-│       ├── sidebar.css
-│       └── animations.css
-├── src/
-│   ├── algorithms/
-│   │   ├── pathfinding/
-│   │   │   ├── dijkstra.js
-│   │   │   ├── astar.js
-│   │   │   ├── bfs.js
-│   │   │   └── dfs.js
-│   │   └── maze/
-│   │       ├── randomMaze.js
-│   │       ├── recursiveDivision.js
-│   │       └── spiralMaze.js
-│   ├── core/
-│   │   ├── grid.js
-│   │   ├── node.js
-│   │   └── animator.js
-│   ├── utils/
-│   │   ├── constants.js
-│   │   ├── helpers.js
-│   │   └── eventHandlers.js
-│   ├── components/
-│   │   ├── sidebar.js
-│   │   ├── toolbar.js
-│   │   └── controls.js
-│   └── main.js
-└── README.md
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualizer</title>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/grid.css">
+    <link rel="stylesheet" href="./assets/styles/sidebar.css">
+    <link rel="stylesheet" href="./assets/styles/animations.css">
+</head>
+<body>
+    <div class="container">
+        <div id="toolbar" class="toolbar">
+            <button id="visualize-btn" class="btn primary">Visualize</button>
+            <button id="clear-btn" class="btn">Clear Board</button>
+            <button id="clear-path-btn" class="btn">Clear Path</button>
+        </div>
+        
+        <div class="main-content">
+            <div id="grid" class="grid"></div>
+            <div id="sidebar" class="sidebar">
+                <div class="sidebar-section">
+                    <h3>Algorithms</h3>
+                    <select id="algorithms-list">
+                        <option value="dijkstra">Dijkstra's Algorithm</option>
+                        <option value="astar">A* Search</option>
+                        <option value="bfs">Breadth First Search</option>
+                        <option value="dfs">Depth First Search</option>
+                    </select>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Maze & Patterns</h3>
+                    <select id="maze-list">
+                        <option value="random">Random Maze</option>
+                        <option value="recursive">Recursive Division</option>
+                        <option value="spiral">Spiral Pattern</option>
+                    </select>
+                    <button id="generate-maze-btn" class="btn">Generate Maze</button>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Speed</h3>
+                    <select id="speed-list">
+                        <option value="fast">Fast</option>
+                        <option value="normal" selected>Normal</option>
+                        <option value="slow">Slow</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/components/sidebar.js"></script>
+    <script type="module" src="src/components/toolbar.js"></script>
+    <script type="module" src="src/components/controls.js"></script>
+    <script type="module" src="src/utils/eventHandlers.js"></script>
+    <script type="module" src="src/utils/constants.js"></script>
+    <script type="module" src="src/core/animator.js"></script>
+    <script type="module" src="src/core/grid.js"></script>
+    <script type="module" src="src/algorithms/pathfinding/dijkstra.js"></script>
+    <script type="module" src="src/algorithms/pathfinding/astar.js"></script>
+    <script type="module" src="src/algorithms/pathfinding/bfs.js"></script>
+    <script type="module" src="src/algorithms/pathfinding/dfs.js"></script>
+    <script type="module" src="src/algorithms/maze/randomMaze.js"></script>
+    <script type="module" src="src/algorithms/maze/recursiveDivision.js"></script>
+    <script type="module" src="src/algorithms/maze/spiralMaze.js"></script>
+</body>
+</html>
